@@ -1,4 +1,5 @@
 import css from './Feedback.module.css';
+import { ControlsBtn } from './ControlsBtn';
 import React from 'react';
 // import PropTypes from 'prop-types';
 
@@ -48,13 +49,16 @@ export class Feedback extends React.Component {
         return (
             <div className={css.container}>
                 <h1 className={css.feedback_title}>Please leave feedback</h1>
-                <div className={css.feedback_controls}>
-                    <button type='button' onClick={this.goodIncreament}>Good</button>
-                    <button type='button' onClick={this.neutralIncreament}>Neutral</button>
-                    <button type='button' onClick={this.badIncreament}>Bad</button>
-                </div>
-                <h2 className={css.feedback_subtitle}>Statistics</h2>
-                <ul className={css.feedback_value}>
+
+            <ControlsBtn
+              goodIncreament={this.goodIncreament}
+              neutralIncreament={this.neutralIncreament}
+              badIncreament={this.badIncreament}
+              />
+
+            <h2 className={css.feedback_subtitle}>Statistics</h2>
+
+            <ul className={css.feedback_value}>
 
                     <li className={css.feedback_item}>
                         <p className={css.feedback_prop}>
