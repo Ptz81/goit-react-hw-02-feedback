@@ -1,45 +1,48 @@
 import css from './Feedback.module.css';
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
-class Feedback extends React.Component {
-
+export class Feedback extends React.Component {
 
     static defaultProps = {
         good: 0,
         neutral: 0,
-        bad: 0
+        bad: 0,
+        totalValue: 0,
     }
-
-    static PropTypes = {
-        ///
-    };
 
     state = {
         good: this.props.good,
         neutral: this.props.neutral,
         bad: this.props.bad,
+        totalValue: this.props.totalValue,
     };
 
     goodIncreament = () => {
-        this.setState(prevState => ({
-            good: prevState.good + 1,
+      this.setState(({ good }) => ({
+            good: good + 1,
         }));
     };
 
     neutralIncreament = () => {
-        this.setState(prevState => ({
-            neutral: prevState.neutral + 1,
+        this.setState(({ neutral })  => ({
+            neutral: neutral + 1,
         }));
     };
 
     badIncreament = () => {
-        this.setState(prevState => ({
-            bad: prevState.bad + 1,
+        this.setState(({ bad })  => ({
+            bad: bad + 1,
         }));
     };
 
+
+  countTotalFeedback = () => {
+    this.setState(({ good, neutral, bad }) => ({
+      totalValue: good + neutral + bad,
+    }))
+  }
 
     render() {
         return (
@@ -55,25 +58,25 @@ class Feedback extends React.Component {
 
                     <li className={css.feedback_item}>
                         <p className={css.feedback_prop}>
-                           Good: <span className={css.feedback_value}>0</span>
+                           Good: <span className={css.feedback_value}>{this.state.good}</span>
                         </p>
                     </li>
 
                     <li className={css.feedback_item}>
                         <p className={css.feedback_prop}>
-                           Neutral: <span className={css.feedback_value}>0</span>
+                           Neutral: <span className={css.feedback_value}>{this.state.neutral}</span>
                         </p>
                     </li>
 
                     <li className={css.feedback_item}>
                         <p className={css.feedback_prop}>
-                           Bad: <span className={css.feedback_value}>0</span>
+                           Bad: <span className={css.feedback_value}>{this.state.bad}</span>
                         </p>
                     </li>
 
                     <li className={css.feedback_item}>
                         <p className={css.feedback_prop}>
-                           Total: <span className={css.feedback_value}>0</span>
+                  Total: <span className={css.feedback_value}>{ this.state.totalValue}</span>
                         </p>
                     </li>
 
@@ -86,9 +89,9 @@ class Feedback extends React.Component {
                 </ul>
         </div>
     )
-
-
 }
 
+};
 
-}
+
+

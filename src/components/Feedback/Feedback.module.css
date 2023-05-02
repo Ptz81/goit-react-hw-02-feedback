@@ -1,0 +1,52 @@
+.container{
+  width: 400px;
+  text-align: center;
+;
+}
+
+
+.feedback_title{
+  font-size: 32px;
+
+}
+
+.feedback_subtitle{
+  font-size: 26px;
+}
+
+.feedback_item{
+  list-style: none;
+}
+
+.feedback_prop{
+  font-size: 20px;
+  color: #212121;
+}
+
+.feedback_value{
+  font-size: 24px;
+
+  color: brown;
+}
+
+.feedback_controls{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feedback_controls button{
+  width: 100px;
+  background-color: azure;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 500;
+  border: #212121 2px solid;
+  border-radius: 20px;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
