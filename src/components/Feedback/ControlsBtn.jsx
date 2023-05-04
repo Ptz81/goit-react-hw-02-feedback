@@ -1,19 +1,32 @@
 import css from './Feedback.module.css'
 import PropTypes from 'prop-types'
 
-export const ControlsBtn = ({data, increment}) => {
+const ControlsBtn = ({data, increment}) => {
 
-  return data.map(item => (
-    <button
-      key='item'
-      onClick={increment}
-      className={css.btn}
-    >{item}</button>
-  ))
+  return (
+    <div>
+      {data.map(item => {
+        return (
+          <button
+            type="button"
+            key={item}
+            onClick={() => increment(item)}
+            className={css.btn}
+          >{item}</button>
+        );
+
+          })}
+
+    </div>
+  );
 }
 
 
 ControlsBtn.propTypes = {
-btnData: PropTypes.array.isRequired,
+data: PropTypes.array.isRequired,
 increment: PropTypes.func.isRequired,
 }
+
+
+
+export default ControlsBtn

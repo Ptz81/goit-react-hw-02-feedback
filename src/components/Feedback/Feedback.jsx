@@ -1,36 +1,30 @@
-import css from './Feedback.module.css';
-import { ControlsBtn } from './ControlsBtn';
-import { Stats } from './Stat';
+
 import React from 'react';
-// import PropTypes from 'prop-types';
 
+import Section from './Section'
+import ControlsBtn from './ControlsBtn';
+import Stats from './Stat';
 
-export class Feedback extends React.Component {
+class Feedback extends React.Component {
 
-    static defaultProps = {
+    state = {
         good: 0,
         neutral: 0,
         bad: 0,
 
-    }
-
-    state = {
-        good: this.props.good,
-        neutral: this.props.neutral,
-        bad: this.props.bad,
-
     };
 
-    increment = () => {
-      this.setState(value => ({
-            value: value + 1,
-        }));
-    };
+    increment = state => {
+    this.setState(prevState => ({
+      [state]: prevState[state] + 1,
+    }));
+  };
 
 
 
   totalValue = () => {
-    return Object.values(this.setState).reduce((a, b) => a + b);
+      const { good, neutral, bad } = this.state;
+      return good + neutral + bad;
   };
 
   positiveFeedbackValue = () => {
@@ -40,38 +34,40 @@ export class Feedback extends React.Component {
   }
 
   render() {
-
+    const { good, bad, neutral } = this.state;
     const data = Object.keys(this.state);
 
-        return (
-            <div className={css.container}>
-            <h1 className={css.feedback_title}>Please leave feedback</h1>
+    return (
+<>
+        <Section title="Please leave your feedback">
+          <ControlsBtn
+            data={data}
+            increment={this.increment}
+          />
+        </Section>
 
-            <div className={css.feedback_controls}>
+        <Section title="Statistics">
+          {this.totalValue() > 0 ? (
+            <Stats
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              totalValue={this.totalValue()}
+              positiveFeedbackValue={this.positiveFeedbackValue()}
+            />) : (<p>"No feedback yet"</p>)
+          }
 
-              <ControlsBtn
-                increment={this.state}
-                data={data}
-              />
-            </div>
-
-
-            <h2 className={css.feedback_subtitle}>Statistics</h2>
-            {this.totalValue > 0 ? (<Stats
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              totalValue={this.totalValue}
-              positiveFeedbackValue={this.positiveFeedbackValue}
-            />):(<p>No feedback yet</p>)
-            }
+        </Section>
+</>
 
 
-        </div>
     )
 }
 
-};
+}
 
 
 
+
+
+export default Feedback
