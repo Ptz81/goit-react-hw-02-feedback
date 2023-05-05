@@ -1,49 +1,65 @@
 .container{
-  width: 400px;
+  width: 500px;
+  height: 400px;
   text-align: center;
-;
+margin-left: auto;
+margin-right: auto;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+background-color: #41ADA5;
+padding: 10px;
+margin-top: 10px;
+border-radius: 20px;
+border: #212121 1px solid;
 }
 
+.btn{
+margin-right: 10px;
+width: 100px;
+padding: 5px;
+font-size: 16px;
+text-transform: uppercase;
+background-color: rgb(0, 138, 80);
+color: #fff;
+border: #fff 1px solid;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(18, 95, 168);
+  font-weight: 600;
+  scale: 1.05;
+  transition: scale, font-weight, background-color, cubic-bezier(0.075, 0.82, 0.165, 1), 300ms;
+
+}
 
 .feedback_title{
   font-size: 32px;
-
+  color: #0a2c1c;
 }
 
-.feedback_subtitle{
-  font-size: 26px;
-}
 
 .feedback_item{
   list-style: none;
 }
 
-.feedback_prop{
-  font-size: 20px;
-  color: #212121;
-}
+
 
 .feedback_value{
-  font-size: 24px;
+  font-size: 20px;
+  display: inline-block;
+    color:#ffff;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+    font-weight: 500;
 
-  color: brown;
+
+}
+.feedback_item:hover{
+  color: #e42355;
+
 }
 
-.feedback_controls{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.feedback_controls button{
-  width: 100px;
-  background-color: azure;
-  color: #212121;
-  font-size: 16px;
-  font-weight: 500;
-  border: #212121 2px solid;
-  border-radius: 20px;
-}
 
 ul{
   padding: 0;

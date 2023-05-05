@@ -13,7 +13,7 @@ const Stats = ({ good, neutral, bad, totalValue, positiveFeedbackValue }) => {
 
       <li className={css.feedback_item}>Total: {totalValue}</li>
 
-      <li className={css.feedback_item}>Positive feedback:{positiveFeedbackValue}</li>
+      <li className={css.feedback_item}>Positive feedback: {positiveFeedbackValue}%</li>
 
     </ul>
   );

@@ -39,7 +39,7 @@ class Feedback extends React.Component {
 
     return (
 <>
-        <Section title="Please leave your feedback">
+        <Section title="To leave your feedback, please press the button">
           <ControlsBtn
             data={data}
             increment={this.increment}
