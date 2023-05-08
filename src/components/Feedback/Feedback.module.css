@@ -1,7 +1,7 @@
 .container{
-  width: 500px;
-  height: 400px;
-  text-align: center;
+width: 500px;
+height: 400px;
+text-align: center;
 margin-left: auto;
 margin-right: auto;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -30,7 +30,6 @@ cursor: pointer;
   font-weight: 600;
   scale: 1.05;
   transition: scale, font-weight, background-color, cubic-bezier(0.075, 0.82, 0.165, 1), 300ms;
-
 }
 
 .feedback_title{
@@ -38,12 +37,9 @@ cursor: pointer;
   color: #0a2c1c;
 }
 
-
 .feedback_item{
   list-style: none;
 }
-
-
 
 .feedback_value{
   font-size: 20px;
@@ -52,14 +48,11 @@ cursor: pointer;
     transition: all 0.5s ease-out;
     cursor: pointer;
     font-weight: 500;
-
-
 }
+
 .feedback_item:hover{
   color: #e42355;
-
 }
-
 
 ul{
   padding: 0;
